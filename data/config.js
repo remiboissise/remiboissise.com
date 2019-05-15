@@ -6,7 +6,7 @@ const config = {
     siteTitle: 'rémi boissise',
     siteTitleShort: 'rémi boissise',
     siteDescription: 'Rémi Boissise, full-stack developer.',
-    googleAnalyticsTrackingId: '',
+    googleAnalyticsTrackingId: 'UA-140236881-1',
     themeColor: '#000000',
     backgroundColor: '#ffffff',
     pathPrefix: '/',
