@@ -1,0 +1,59 @@
+.page-index {
+    .inner-container 
+    {
+        &.hero 
+        {
+            padding: 2em 0em;
+            h2 
+            {
+                font-size: 2em;
+                line-height: 1.5em;
+    
+                span {
+                    &.highlight {
+                        background-color: $black-dark;
+                        color:$white-bold;
+                    }
+                }
+            }
+        }
+    
+        .column-2 {
+            &.about{
+                column-count: 2;
+                column-gap: 2em;
+                text-align: justify;
+                line-height: 1.5em;
+                padding-bottom: 2em;
+                @media only screen and (max-width: $x-small) {
+                    column-count: 1;
+                    column-gap: 0em;
+                }
+            }
+        }
+    
+        .paragraph {
+            line-height: 1.5em;
+            text-align: justify;
+            padding-bottom: 2em;
+        }
+    
+        a {
+           &.highlight {
+                background-color: $black-dark;
+                color:$white-bold !important;
+                cursor: pointer;
+            }
+        }
+
+        .image {
+            text-align: center;
+            .profil-pic {
+                width: 30%;
+                @media screen and (max-width: $x-small) {
+                    width: 50%
+                }
+            }
+        }
+    }
+}

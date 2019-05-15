@@ -1,0 +1,111 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .title {
+        -webkit-transition: border 0.25s ease-out;
+        transition: border 0.25s ease-out;
+        position: relative;
+        min-height: 300px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 48%;
+        margin-top: 4%;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: 1.6rem;
+            display: inline-block;
+        }
+    }
+    
+    .card {
+        transition: border 0.25s ease-out;
+        position: relative;
+        min-height: 300px;
+        border: 1px solid $black-light;
+        overflow: hidden;
+    
+        display: flex;
+        flex-direction: column;
+        flex:0 1 48%;
+        margin-top: 4%;
+    
+        .card-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 15px; 
+
+            a {
+                cursor: pointer;
+                color: $black-bold;
+                background: linear-gradient(to right, $black-bold 50%, $white 50%);
+                background-size: 300% 100%;
+                background-position: right bottom;
+                transition: all .5s ease-out;
+                &:hover {
+                    background-position: left bottom;
+                    color: $white-bold;
+                }
+            }
+            
+        }
+    
+        .card-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0px 15px 5px 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            flex-direction: row;
+            bottom: 0;
+            width: 100%;
+            position: absolute;
+            padding: 5px 15px 15px 15px;
+            justify-content: space-between;
+            
+            a {
+                background: linear-gradient(to right, $black-bold 50%, $white 50%);
+                background-size: 300% 100%;
+                background-position: right bottom;
+                transition: all .5s ease-out;
+                &:hover {
+                    background-position: left bottom;
+                    color: $white-bold;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid $black-dark;
+        }
+    }
+}
+
+@media only screen and (max-width: $x-small) {
+    .cards {
+
+        justify-content: space-around;
+
+        .title {
+            flex: 0 1 100%;
+        }
+
+        .card {
+            display: flex;
+            flex-basis: 90%;
+        }
+    }
+}

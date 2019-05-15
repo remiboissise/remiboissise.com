@@ -1,0 +1,54 @@
+{
+  "name": "remiboissise.com",
+  "private": true,
+  "description": "Personnal site develope using GatsbyJS Framework, running on React.",
+  "version": "1.0.0",
+  "author": "Rémi Boissise <remiboissise@gmail.com>",
+  "dependencies": {
+    "gatsby": "^2.4.2",
+    "gatsby-image": "^2.0.41",
+    "gatsby-plugin-google-analytics": "^2.0.20",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.0.36",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-transformer-json": "^2.1.11",
+    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "i18next": "^15.1.0",
+    "i18next-browser-languagedetector": "^3.0.1",
+    "i18next-xhr-backend": "^2.0.1",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-i18next": "^10.9.0",
+    "react-icons": "^3.7.0",
+    "react-svg": "^9.0.4"
+  },
+  "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
+    "prettier": "^1.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remiboissise/remiboissise.com"
+  },
+  "bugs": {
+    "url": "https://github.com/remiboissise/remiboissise.com/issues"
+  }
+}

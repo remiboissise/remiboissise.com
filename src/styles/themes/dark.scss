@@ -1,0 +1,136 @@
+.dark {
+
+    background-color: $black-dark;
+    color: $white;
+    transition: all 0.6s ease;
+
+    nav {
+
+        &.scroll {
+            background-color: $black-bold;
+        }
+        
+        .nav-brand {
+            a span {
+                color: $white;
+            }
+
+            .nav-ham a{
+                color: $white-bold;
+            }
+        }
+
+        .nav-links a {
+            color: $white !important;
+        }
+
+        .nav-links {
+            a {
+                color:$white;
+                background: linear-gradient(to right, $white-bold 50%, transparent 50%) !important;
+                background-size: 300% 100% !important;
+                background-position: right bottom !important;
+                transition: background .5s ease-out !important;
+                &.active {
+                    background-color:$white-bold!important;
+                    color: $black-dark !important;
+                    font-weight: bolder;
+                }
+    
+                &:hover {
+                    background-position: left bottom !important;
+                    color: $black-dark !important;
+                }
+            }
+        }
+    }
+
+    .cards .card {
+        border: 1px solid $white;
+        .card-header {
+            h2 {
+                a {
+                    color:$white;
+                    background: linear-gradient(to right, $white-bold 50%, transparent 50%);
+                    background-size: 300% 100%;
+                    background-position: right bottom;
+                    transition: all .5s ease-out;
+                    &:hover {
+                        background-position: left bottom;
+                        color: $black-bold;
+                        font-weight: bolder;
+                    }
+                }
+            }
+
+            img {
+                &.whiteBg {
+                    background-color: $white;
+                }
+            }
+        }
+        .card-footer {
+            a {
+                color:$white;
+                background: linear-gradient(to right, $white-bold 50%, transparent 50%);
+                background-size: 300% 100%;
+                background-position: right bottom;
+                transition: all .5s ease-out;
+                &:hover {
+                    background-position: left bottom;
+                    color: $black-bold;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid $white;
+        }
+    }
+
+    .contact {
+        ul {
+            margin: 0;
+            text-decoration: none;
+            padding: 0;
+
+            li {
+                text-decoration: none;
+                cursor: pointer;
+                list-style: none;
+                margin: 15px 0px;
+
+                a {
+                    font-size: 48px;
+                    background: linear-gradient(to right, transparent 50%, $white-bold 50%);
+                    background-size: 300% 100%;
+                    background-position: right bottom;
+                    transition: all .5s ease-out;
+                    color: $black-dark !important; 
+                    
+                    &:hover {
+                        background-position: left bottom !important;
+                        color: $white-bold !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .inner-container 
+    {
+        &.hero 
+        {
+            h2 
+            {
+                span {
+                    &.highlight {
+                        background-color: $white-bold;
+                        color: $black-dark;
+                    }
+                }
+            }
+        }
+    }
+}
