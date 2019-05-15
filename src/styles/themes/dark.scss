@@ -134,6 +134,31 @@
         }
     }
 
+    .page-index {
+        .inner-container 
+        {
+            &.hero 
+            {
+                h2 
+                {
+                    span {
+                        &.highlight {
+                            background-color: $white-bold;
+                            color: $black-dark;
+                        }
+                    }
+                }
+            }
+        
+            a {
+               &.highlight {
+                    background-color: $white-bold;
+                    color: $black-dark;
+                }
+            }
+        }
+    }
+    
     .page-404 {
         .inner-container {
             .row {

@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import Navigation from "./Navigation"
 import Helmet from 'react-helmet'
 import ThemeContext from '../context/ThemeContext'
+import '../styles/main.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
