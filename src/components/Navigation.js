@@ -76,8 +76,8 @@ export default class Navigation extends React.Component {
                                 </a>
                                 <button className="button-theme" onClick={theme.toggleDark}>
                                     {theme.dark ? 
-                                        <Icon src='./header/moon.svg' height='25'></Icon>
-                                        : <Icon src='./header/sun.svg' height='25'></Icon>}
+                                        <Icon src='./header/sun.svg' height='25'></Icon>
+                                        : <Icon src='./header/moon.svg' height='25'></Icon>}
                                 </button>
                             </div>
                         </div>
