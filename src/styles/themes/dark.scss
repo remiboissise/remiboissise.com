@@ -15,8 +15,10 @@
                 color: $white;
             }
 
-            .nav-ham a{
-                color: $white-bold;
+            .nav-ham {
+                &.button-ham{
+                    color: $white-bold;
+                }
             }
         }
 
