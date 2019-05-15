@@ -133,4 +133,20 @@
             }
         }
     }
+
+    .page-404 {
+        .inner-container {
+            .row {
+                .number {
+                    background-color: $white-bold;
+                    color: $black-dark ;
+                }
+    
+                .letters {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+    
 }
