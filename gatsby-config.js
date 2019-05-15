@@ -43,6 +43,16 @@ module.exports = {
             trackingId: config.googleAnalyticsTrackingId,
             },
         },
+        {
+            resolve: `gatsby-plugin-netlify`,
+            options: {
+                headers: {
+                    '/*.js': ['cache-control: public, max-age=31536000, immutable'],
+                    '/*.css': ['cache-control: public, max-age=31536000, immutable'],
+                    '/sw.js': ['cache-control: public, max-age=0, must-revalidate'],
+                },
+            },
+        },
         `gatsby-plugin-sass`,
         {
         resolve: `gatsby-plugin-manifest`,
