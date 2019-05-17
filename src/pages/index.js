@@ -1,13 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import config from "../../data/config"
 
 export default class Index extends React.Component {
 
     render() {
         return (
             <Layout>
-                <SEO title='me' />
+                <SEO title={`${config.siteTitle} | full-stack developer`} />
                 <div className="container page-index">
                     <section className="inner-container hero">
                         <h2>hello, my name is <span className="highlight">rémi</span>. I am a <span className="highlight">full-stack developer</span> living in Paris, France.</h2>
