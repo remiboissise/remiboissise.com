@@ -23,6 +23,8 @@ export default class ProjetPage extends React.Component {
                                         color
                                         height
                                         isNeededWhiteBg
+                                        appStoreLink
+                                        playStoreLink
                                     }
                                 }
                             }

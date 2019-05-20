@@ -56,7 +56,9 @@
                 "description": "Mobile application enhancing the visitor experience for the Revelation show to be held in Paris in May 2019",
                 "img": "./logos/fg.png",
                 "color": "#007396",
-                "isNeededWhiteBg": true
+                "isNeededWhiteBg": true,
+                "appStoreLink": "https://itunes.apple.com/fr/app/franck-genser/id1464170441?mt=8",
+                "playStoreLink": "https://play.google.com/store/apps/details?id=com.protagoras.franckgenser"
             }
         ]
     }

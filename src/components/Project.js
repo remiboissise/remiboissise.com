@@ -1,11 +1,14 @@
 import React from 'react'
 import Icon from './Icon'
+import { withPrefix } from 'gatsby'
 
 export default class ListCardProject extends React.Component {
 
     render() {
 
         const categories = this.props.projets;
+
+        console.log(categories);
 
         return (
             <>
@@ -36,6 +39,16 @@ export default class ListCardProject extends React.Component {
                                     ) : null}
                                     {projet.source ? (
                                         <a className='animate' href={projet.source} rel="noopener noreferrer" target="_blank">source</a>
+                                    ) : null}
+                                    {projet.appStoreLink ? (
+                                        <a className="animate" href={projet.appStoreLink} rel="noopener noreferrer" target="_blank"> 
+                                            <Icon src={withPrefix('/logos/apple.svg')}  height={20} />
+                                        </a>
+                                    ) : null}
+                                    {projet.playStoreLink ? (
+                                        <a className="animate" href={projet.playStoreLink} rel="noopener noreferrer" target="_blank"> 
+                                            <Icon src={withPrefix('/logos/android.svg')}  height={20} />
+                                        </a>
                                     ) : null}
                                 </div>
                             </div>

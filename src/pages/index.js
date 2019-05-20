@@ -1,25 +1,24 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import config from "../../data/config"
 
 export default class Index extends React.Component {
 
     render() {
         return (
             <Layout>
-                <SEO title={`${config.siteTitle} | full-stack developer`} />
+                <SEO title={`full-stack developer`} />
                 <div className="container page-index">
                     <section className="inner-container hero">
                         <h2>hello, my name is <span className="highlight">rémi</span>. I am a <span className="highlight">full-stack developer</span> living in Paris, France.</h2>
                     </section>
                     <section className='inner-container'>
                         <p className="column-2 about">        
-                            Diplômé d’un Master II en méthodes informatiques appliquées à la gestion des entreprises à l’université Paris 1 – Panthéon-Sorbonne, j’ai longtemps été passionné par les technologies web. Mes premières expériences en développement mobile et web chez D-Dale et Heliop m'ont permis d'acquérir des compétences techniques solides et de démontrer ce que j’étais capable de faire.
+                            Passionate, dynamic and a graduate of a Master in computer methods applied to business management at the University of Paris 1 - Panthéon-Sorbonne, I have been interested for many years in new technologies. I particularly like the idea that the applications I design make everyday life easier for users. It is with this in mind that I have developed, for D-Dale, a solution for orientation in complex buildings that is totally independent of any physical equipment or Internet connection.
                         </p>  
                         <p className="paragraph">
-                            Passionné et dynamique, j’aime apprendre de nouvelles choses et les faire découvrir à mon entourage. Si vous souhaitez en apprendre davantage sur ma personne et/ou mon travail, n’hésitez pas à me <a className="highlight" href='/contact'>contacter</a>.
-                            Pour plus d’informations sur mes compétences, n'hésitez pas à jeter un oeil à mon <a className="highlight" href='/contact'>cv</a> et mes <a className="highlight" href='/projects'>projets</a>.
+                            The development of algorithms remains for me one of the fundamental challenges of programming. I like to learn new things and make people discover them.
+                            Feel free to discover <a className="highlight" href='/projects'>my different projects</a>, consult <a className="highlight" href='/contact'>my resume</a> or <a className="highlight" href='/contact'>contact me</a> directly if you want to learn more about my work.
                         </p>
                         <div className="image">
                             <img src="images/me.jpg" alt="Rémi Boissise" className="profil-pic"/>
