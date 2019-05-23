@@ -7,11 +7,11 @@ module.exports = {
         author: `@remiboissise`,
         menuLinks: [
             {
-                name: 'projects',
+                name: 'Navigation.Projects',
                 link: '/projects'
             },
             {
-                name: 'contact',
+                name: 'Navigation.Contact',
                 link: '/contact'
             }
         ]

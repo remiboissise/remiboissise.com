@@ -175,5 +175,13 @@
             }
         }
     }
-    
+
+    // Relative to footer component
+    .foo {
+        .language {
+            button {
+                background-color: transparent;
+            }
+        }
+    }
 }

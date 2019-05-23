@@ -4,80 +4,45 @@ import ThemeContext from '../context/ThemeContext';
 import Icon from './Icon';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import config from '../../data/config';
+import { FormattedMessage } from 'react-intl';
 
 export default class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            scrolled: false,
-            open: false
-        }
-    }
-
-    navOnScroll = () => {
-        (window.scrollY > 20) ? this.setState({ scrolled : true }) : this.setState({ scrolled : false });
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.navOnScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.navOnScroll);
-    }
-
-    getHeight(id) {
-        return document.getElementById(id).clientHeight;
-    }
-
-    handleClick(e) {
-        e.preventDefault();
-        const isOpen = this.state.open;
-        (isOpen) ? 
-            this.setState({ 'open' : false}, () => {
-                let height = this.getHeight('nav-height');
-                document.getElementById('main-content-height').style.padding = height + 'px 0 0'; 
-            }) : 
-            this.setState({ 'open' : true}, () => {
-                let height = this.getHeight('nav-height');
-                document.getElementById('main-content-height').style.padding = height + 'px 0 0'; 
-            });
-    }
 
     render() {
 
-        const menuLinks = this.props.menuLinks;
+        const { menuLinks, open, scrolled } = this.props;
         const configuration = config;
 
         return (
             <ThemeContext.Consumer>
                 {theme => (
-                    <nav id='nav-height' className={this.state.scrolled ? 'nav scroll' : 'nav'} role="navigation">
-                        <div className={this.state.open ? 'nav-container open' : 'nav-container'}>
+                    <nav id='nav-height' className={scrolled ? 'nav scroll' : 'nav'} role="navigation">
+                        <div className={open ? 'nav-container open' : 'nav-container'}>
                             <div className='nav-brand'>
                                 <Link to='/'>
-                                    <span className="animate">rémi boissise</span>
+                                    <span className="animate">
+                                        <FormattedMessage id='Navigation.Brand' />
+                                    </span>
                                 </Link>
                                 <div className='nav-ham'>
-                                    <button className='button-ham' onClick={this.handleClick.bind(this)}>
-                                        {this.state.open ? <FaTimes /> : <FaBars />}
+                                    <button className='button-ham' onClick={this.props.handleClick}>
+                                        { open ? <FaTimes /> : <FaBars /> }
                                     </button>
                                 </div>
                             </div>
                             <div className='nav-links' id="nav-links-height">
                                 {
                                     menuLinks.map(link => (
-                                        <Link key={link.name} to={link.link} activeClassName="active" partiallyActive={true} className='animate'>{link.name}</Link>
+                                        <Link key={link.name} to={link.link} activeClassName="active" partiallyActive={true} className='animate'>
+                                            <FormattedMessage id={link.name} />
+                                        </Link>
                                     ))
                                 }
                                 <a target="_blank" rel="noopener noreferrer" href={configuration.gitUrl}>
-                                    github
+                                    <FormattedMessage id='Navigation.Github' />
                                 </a>
                                 <button className="button-theme" onClick={theme.toggleDark}>
-                                    {theme.dark ? 
-                                        <Icon src='./header/sun.svg' height='25'></Icon>
-                                        : <Icon src='./header/moon.svg' height='25'></Icon>}
+                                    { theme.dark ? <Icon src='./header/sun.svg' height='25'></Icon> : <Icon src='./header/moon.svg' height='25'></Icon> }
                                 </button>
                             </div>
                         </div>

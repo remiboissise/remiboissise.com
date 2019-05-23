@@ -1,3 +1,42 @@
 {
-    "title": "English"
+    "Index" : 
+    {
+        "Presentation"              : "<h2>hello, my name is <span class='highlight'>rémi</span>. I am a <span class='highlight'>full-stack developer</span> living in Paris, France.</h2>",
+        "About"                     : "Passionate, dynamic and a graduate of a Master in computer methods applied to business management at the University of Paris 1 - Panthéon-Sorbonne, I have been interested for many years in new technologies. I particularly like the idea that the applications I design make everyday life easier for users. It is with this in mind that I have developed, for D-Dale, a solution for orientation in complex buildings that is totally independent of any physical equipment or Internet connection.",
+        "Situation"                 : "The development of algorithms remains for me one of the fundamental challenges of programming. I like to learn new things and make people discover them. Feel free to discover <a class='highlight' href='/projects'>my different projects</a>, consult <a class='highlight' href={cv_url}>my resume</a> or <a class='highlight' href='/contact'>contact me</a> directly if you want to learn more about my work."
+    },
+    "Navigation" : 
+    {
+        "Brand"                     : "rémi boissise",
+        "Projects"                  : "projects",
+        "Contact"                   : "contact",
+        "Github"                    : "github"
+    },
+    "Contact" : 
+    {
+        "Title"                     : "stay in touch",
+        "Email"                     : "email",
+        "Linkedin"                  : "linkedin",
+        "Github"                    : "github",
+        "Resume"                    : "resume"
+    },
+    "Footer":
+    {
+        "Copyright"                 : "© {date}, rémi boissise"
+    },
+    "Project": 
+    {
+        "Website"                   : "website",
+        "Source"                    : "source"
+    },
+    "404": 
+    {
+        "First_number"              : "4",
+        "Second_number"             : "0",
+        "Third_number"              : "4",
+        "First_word"                : "page",
+        "Second_word_1"             : "n",
+        "Second_word_2"             : "t",
+        "Third_word"                : "found"
+    }
 }

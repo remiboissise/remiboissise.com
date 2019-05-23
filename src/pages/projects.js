@@ -1,49 +1,31 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import Project from '../components/Project';
-import { StaticQuery, graphql } from 'gatsby';
-import SEO from '../components/SEO';
+import React from 'react'
+import Layout from '../components/Layout'
+import Project from '../components/Project'
+import SEO from '../components/SEO'
+import LanguageContext from '../context/LanguageContext'
+import projets  from '../../data/projets'
 
-export default class ProjetPage extends React.Component {
+class ProjetPage extends React.Component {
     render() {
-        return (
-            <StaticQuery
-                query = { graphql`
-                    query ProjetPage {
-                        allProjetsJson {
-                            edges {
-                                node {
-                                    title 
-                                    projects {
-                                        path
-                                        title
-                                        source
-                                        description
-                                        img
-                                        color
-                                        height
-                                        isNeededWhiteBg
-                                        appStoreLink
-                                        playStoreLink
-                                    }
-                                }
-                            }
-                        }
-                    }
-                `}
+        var { locale } = this.context;
+        
+        const projects = projets.find((projet) => {
+            return projet.language === locale
+        })
 
-                render = { data => (
-                    <>
-                        <SEO title="projects"/>
-                        <Layout>
-                            <div className="container">
-                                <Project projets={ data.allProjetsJson.edges }></Project>
-                            </div>
-                        </Layout>
-                    </>
-                )}
-            >
-            </StaticQuery>
+        return (
+            <>
+                <SEO title="projects"/>
+                <Layout>
+                    <div className="container">
+                        <Project projets={ projects.projects }></Project>
+                    </div>
+                </Layout>
+            </>
         )
     }
 }
+
+ProjetPage.contextType = LanguageContext
+
+export default ProjetPage

@@ -1,24 +1,20 @@
 import React from 'react'
 import Icon from './Icon'
 import { withPrefix } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 export default class ListCardProject extends React.Component {
-
     render() {
-
         const categories = this.props.projets;
-
-        console.log(categories);
-
         return (
             <>
             {categories.map((categorie, index) => {
                 return(
                     <section className="cards" key={index}>
                         <div className="title">
-                            <h1>{categorie.node.title}</h1>
+                            <h1>{categorie.title}</h1>
                         </div>
-                        {categorie.node.projects.map((projet, index) => (
+                        {categorie.projects.map((projet, index) => (
                             <div 
                                 key={index}
                                 className="card">
@@ -27,7 +23,7 @@ export default class ListCardProject extends React.Component {
                                         <a href={projet.source ? projet.source : projet.path} rel="noopener noreferrer" target="_blank">{projet.title}</a>
                                     </h2>
                                     { projet.img ? (
-                                        <Icon className={projet.isNeededWhiteBg ? 'whiteBg' : ''} src={projet.img} height={projet.height ? projet.height : 35}></Icon>
+                                        <Icon className={projet.isNeededWhiteBg ? 'whiteBg' : ''} src={projet.img} height={projet.height ? projet.height : 35} />
                                     ) : null }
                                 </div>
                                 <div className='card-main'>
@@ -35,10 +31,14 @@ export default class ListCardProject extends React.Component {
                                 </div>
                                 <div className='card-footer'>
                                     {projet.path ? (
-                                        <a className="animate" href={projet.path}>website</a>
+                                        <a className="animate" href={projet.path}>
+                                            <FormattedMessage id="Project.Website" />
+                                        </a>
                                     ) : null}
                                     {projet.source ? (
-                                        <a className='animate' href={projet.source} rel="noopener noreferrer" target="_blank">source</a>
+                                        <a className='animate' href={projet.source} rel="noopener noreferrer" target="_blank">
+                                            <FormattedMessage id="Project.Source" />
+                                        </a>
                                     ) : null}
                                     {projet.appStoreLink ? (
                                         <a className="animate" href={projet.appStoreLink} rel="noopener noreferrer" target="_blank"> 
