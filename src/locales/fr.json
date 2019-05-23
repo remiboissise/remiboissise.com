@@ -1,7 +1,7 @@
 {
     "Index" : 
     {
-        "Presentation" : "<h2>salut, c'est <span class='highlight'>rémi</span>. Je suis un <span class = 'highlight'>développeur full-stack </span> résidant à Paris, en France.</h2>",
+        "Presentation" : "<h2>salut, c'est <span class='highlight'>rémi</span>. Je suis un <span class = 'highlight'>développeur full-stack</span> résidant à Paris, en France.</h2>",
         "About" : "Passionné, dynamique et diplômé d’un Master en méthodes informatiques appliquées à la gestion des entreprises à l’université Paris 1 – Panthéon-Sorbonne, je m’intéresse depuis de nombreuses années aux nouvelles technologies. J’aime en particulier l'idée que les applications que je conçois facilitent le quotidien des utilisateurs. C’est dans cette perspective que j’ai mis au point, pour D-Dale, une solution d’orientation dans les bâtiments complexes totalement indépendant de tout matériel physique ou connexion internet.",
         "Situation" : "Le développement d’algorithmes reste pour moi l’un des enjeux fondamentaux de la programmation. J’aime apprendre de nouvelles choses et les faire découvrir à mon entourage. N'hésitez pas à découvrir <a class='highlight' href='/projects'>mes différents projets</a>, consulter <a class='highlight' href={cv_url}>mon cv</a> ou à <a class='highlight' href='/contact'>me contacter</a> directement si vous souhaitez en apprendre davantage sur mon travail."
     },
