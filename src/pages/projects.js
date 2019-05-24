@@ -4,6 +4,7 @@ import Project from '../components/Project'
 import SEO from '../components/SEO'
 import LanguageContext from '../context/LanguageContext'
 import projets  from '../../data/projets'
+import configurationSeo from '../../data/seo'
 
 class ProjetPage extends React.Component {
     render() {
@@ -15,7 +16,12 @@ class ProjetPage extends React.Component {
 
         return (
             <>
-                <SEO title="projects"/>
+                <SEO 
+                    lang='en'
+                    title={`projects`} 
+                    description={configurationSeo.meta_description_projects} 
+                    keywords={configurationSeo.keywords_projects} 
+                />
                 <Layout>
                     <div className="container">
                         <Project projets={ projects.projects }></Project>

@@ -2,6 +2,7 @@ const config = require('./data/config');
 
 module.exports = {
     siteMetadata: {
+        siteUrl: config.siteUrl,
         title: config.siteTitle,
         description: config.siteDescription,
         author: `@remiboissise`,
@@ -17,6 +18,7 @@ module.exports = {
         ]
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         `gatsby-transformer-remark`,
         `gatsby-plugin-remove-trailing-slashes`,
         `gatsby-transformer-sharp`,

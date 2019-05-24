@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { withPrefix } from 'gatsby'
 import config from '../../data/config'
+import configurationSeo from '../../data/seo'
 
 import { FormattedMessage } from 'react-intl'
 
@@ -11,7 +12,12 @@ export default class ContactPage extends React.Component {
         const configuration = config;
         return (
             <>
-                <SEO title="contact"/>
+                <SEO 
+                    lang='en'
+                    title="contact" 
+                    description={configurationSeo.meta_description_contact} 
+                    keywords={configurationSeo.keywords_contact} 
+                />
                 <Layout>
                     <div className='container page-contact'>
                         <h2>

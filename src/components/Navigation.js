@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import ThemeContext from '../context/ThemeContext';
 import Icon from './Icon';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -42,7 +42,10 @@ export default class Navigation extends React.Component {
                                     <FormattedMessage id='Navigation.Github' />
                                 </a>
                                 <button className="button-theme" onClick={theme.toggleDark}>
-                                    { theme.dark ? <Icon src='./header/sun.svg' height='25'></Icon> : <Icon src='./header/moon.svg' height='25'></Icon> }
+                                    { theme.dark 
+                                        ? <Icon src={withPrefix('/header/sun.svg')} height='25' alt={`Light mode`}></Icon> 
+                                        : <Icon src={withPrefix('/header/moon.svg')} height='25' alt={`Dark mode`}></Icon> 
+                                    }
                                 </button>
                             </div>
                         </div>

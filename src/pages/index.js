@@ -4,12 +4,18 @@ import SEO from "../components/SEO"
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { withPrefix } from "gatsby";
 import configuration from '../../data/config'
+import configurationSeo from '../../data/seo'
 
 export default class Index extends React.Component {
     render() {
         return (
             <Layout>
-                <SEO title={`full-stack developer`} />
+                <SEO 
+                    lang='en'
+                    title={`full-stack software developer`} 
+                    description={configurationSeo.meta_description_index} 
+                    keywords={configurationSeo.keywords_index} 
+                />
                 <div className="container page-index">
                     <section className="inner-container hero">
                         <FormattedHTMLMessage id='Index.Presentation' />

@@ -5,7 +5,10 @@ import { FormattedMessage } from 'react-intl'
 
 const NotFoundPage = () => (
     <Layout>
-        <SEO title="404" />
+        <SEO 
+            lang='en'
+            title="404" 
+        />
         <div className='container page-404'>
             <div className='inner-container'>
                 <div className='row'>
