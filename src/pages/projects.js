@@ -5,6 +5,7 @@ import SEO from '../components/SEO'
 import LanguageContext from '../context/LanguageContext'
 import projets  from '../../data/projets'
 import configurationSeo from '../../data/seo'
+import { FormattedMessage } from 'react-intl'
 
 class ProjetPage extends React.Component {
     render() {
@@ -24,6 +25,9 @@ class ProjetPage extends React.Component {
                 />
                 <Layout>
                     <div className="container">
+                        <h1 class="hidden">
+                            <FormattedMessage id='Project.Title' />
+                        </h1>
                         <Project projets={ projects.projects }></Project>
                     </div>
                 </Layout>

@@ -12,16 +12,16 @@ export default class ListCardProject extends React.Component {
                 return(
                     <section className="cards" key={index}>
                         <div className="title">
-                            <h1>{categorie.title}</h1>
+                            <h2>{categorie.title}</h2>
                         </div>
                         {categorie.projects.map((projet, index) => (
                             <div 
                                 key={index}
                                 className="card">
                                 <div className='card-header'>
-                                    <h2>
+                                    <h3>
                                         <a href={projet.source ? projet.source : projet.path} rel="noopener noreferrer" target="_blank">{projet.title}</a>
-                                    </h2>
+                                    </h3>
                                     { projet.img ? (
                                         <Icon className={projet.isNeededWhiteBg ? 'whiteBg' : ''} src={withPrefix(projet.img)} height={projet.height ? projet.height : 35} alt={`Brand`} />
                                     ) : null }

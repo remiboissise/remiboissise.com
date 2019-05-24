@@ -20,9 +20,9 @@ export default class ContactPage extends React.Component {
                 />
                 <Layout>
                     <div className='container page-contact'>
-                        <h2>
+                        <h1>
                             <FormattedMessage id="Contact.Title" />
-                        </h2>
+                        </h1>
                         <ul>
                             <li>
                                 <a href={"mailto:" + configuration.email}>

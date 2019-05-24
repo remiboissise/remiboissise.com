@@ -29,6 +29,12 @@ html {
                 margin-left: auto;
                 margin-right: auto;
                 padding: 40px 24px;
+
+                .hidden {
+                    visibility: hidden;
+                    height: 0;
+                    margin: 0;
+                }
             }
         }
 
