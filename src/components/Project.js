@@ -31,7 +31,7 @@ export default class ListCardProject extends React.Component {
                                 </div>
                                 <div className='card-footer'>
                                     {projet.path ? (
-                                        <a className="animate" href={projet.path}>
+                                        <a className="animate" href={projet.path} target="_blank" rel="noopener noreferrer">
                                             <FormattedMessage id="Project.Website" />
                                         </a>
                                     ) : null}

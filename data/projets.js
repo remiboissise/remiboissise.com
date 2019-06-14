@@ -30,9 +30,17 @@ const projets = [
                         "title": "remiboissise.com",
                         "description": "Personnal site develope using GatsbyJS Framework, running on React.",
                         "source": "https://github.com/remiboissise/remiboissise.com",
-                        "path": "http://localhost:63445",
+                        "path": "https://www.remiboissise.com",
                         "img": "/logos/gatsby.svg",
                         "color": "#663399"
+                    },
+                    {
+                        "title": "tic tac toe",
+                        "description": "Discovery of the React Framework. Creation of tic tac toe game.",
+                        "source": "https://github.com/remiboissise/morpion",
+                        "path": "https://remiboissise.github.io/morpion/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
                     }
                 ]
             },
@@ -98,9 +106,17 @@ const projets = [
                         "title": "remiboissise.com",
                         "description": "Site personnel développé avec GatsbyJS Framework, fonctionnant sous React.",
                         "source": "https://github.com/remiboissise/remiboissise.com",
-                        "path": "http://localhost:63445",
+                        "path": "https://www.remiboissise.com",
                         "img": "/logos/gatsby.svg",
                         "color": "#663399"
+                    },
+                    {
+                        "title": "morpion",
+                        "description": "Découverte du Framework React. Création du jeu du Morpion.",
+                        "source": "https://github.com/remiboissise/morpion",
+                        "path": "https://remiboissise.github.io/morpion/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
                     }
                 ]
             },
