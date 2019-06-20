@@ -41,6 +41,14 @@ const projets = [
                         "path": "https://remiboissise.github.io/morpion/",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
+                    },
+                    {
+                        "title": "snake",
+                        "description": "Discovery of the React Framework. Creation of snake game.",
+                        "source": "https://github.com/remiboissise/snake",
+                        "path": "https://remiboissise.github.io/snake/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
                     }
                 ]
             },
@@ -115,6 +123,14 @@ const projets = [
                         "description": "Découverte du Framework React. Création du jeu du Morpion.",
                         "source": "https://github.com/remiboissise/morpion",
                         "path": "https://remiboissise.github.io/morpion/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
+                    },
+                    {
+                        "title": "snake",
+                        "description": "Découverte du Framework React. Création du jeu du Snake.",
+                        "source": "https://github.com/remiboissise/snake",
+                        "path": "https://remiboissise.github.io/snake/",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
                     }
