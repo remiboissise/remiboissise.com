@@ -49,6 +49,14 @@ const projets = [
                         "path": "https://remiboissise.github.io/snake/",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
+                    },
+                    {
+                        "title": "serpentron",
+                        "description": "Creation of serpentron game. The goal of the game is to survive as long as possible without touching the opponent.",
+                        "source": "https://github.com/remiboissise/serpentron",
+                        "path": "https://remiboissise.github.io/serpentron/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
                     }
                 ]
             },
@@ -131,6 +139,14 @@ const projets = [
                         "description": "Découverte du Framework React. Création du jeu du Snake.",
                         "source": "https://github.com/remiboissise/snake",
                         "path": "https://remiboissise.github.io/snake/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
+                    },
+                    {
+                        "title": "serpentron",
+                        "description": "Création du jeu serpentron. Le but du jeu est de survivre le plus longtemps possible sans toucher l'adversaire.",
+                        "source": "https://github.com/remiboissise/serpentron",
+                        "path": "https://remiboissise.github.io/serpentron/",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
                     }
