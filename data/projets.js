@@ -35,7 +35,7 @@ const projets = [
                         "color": "#663399"
                     },
                     {
-                        "title": "tic tac toe",
+                        "title": "🎮 tic tac toe",
                         "description": "Discovery of the React Framework. Creation of tic tac toe game.",
                         "source": "https://github.com/remiboissise/morpion",
                         "path": "https://remiboissise.github.io/morpion/",
@@ -43,7 +43,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "snake",
+                        "title": "🎮 snake",
                         "description": "Discovery of the React Framework. Creation of snake game.",
                         "source": "https://github.com/remiboissise/snake",
                         "path": "https://remiboissise.github.io/snake/",
@@ -51,7 +51,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "serpentron",
+                        "title": "🎮 serpentron",
                         "description": "Creation of serpentron game. The goal of the game is to survive as long as possible without touching the opponent.",
                         "source": "https://github.com/remiboissise/serpentron",
                         "path": "https://remiboissise.github.io/serpentron/",
@@ -127,7 +127,7 @@ const projets = [
                         "color": "#663399"
                     },
                     {
-                        "title": "morpion",
+                        "title": "🎮 morpion",
                         "description": "Découverte du Framework React. Création du jeu du Morpion.",
                         "source": "https://github.com/remiboissise/morpion",
                         "path": "https://remiboissise.github.io/morpion/",
@@ -135,7 +135,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "snake",
+                        "title": "🎮 snake",
                         "description": "Découverte du Framework React. Création du jeu du Snake.",
                         "source": "https://github.com/remiboissise/snake",
                         "path": "https://remiboissise.github.io/snake/",
@@ -143,7 +143,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "serpentron",
+                        "title": "🎮 serpentron",
                         "description": "Création du jeu serpentron. Le but du jeu est de survivre le plus longtemps possible sans toucher l'adversaire.",
                         "source": "https://github.com/remiboissise/serpentron",
                         "path": "https://remiboissise.github.io/serpentron/",
