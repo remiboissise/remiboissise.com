@@ -59,7 +59,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "🐈 catmash"
+                        "title": "🐈 catmash",
                         "description": "A facemash-like app with cute cats",
                         "source": "https://github.com/remiboissise/cat-mash",
                         "path": "https://catmash.remiboissise.com/",
@@ -159,7 +159,7 @@ const projets = [
                         "color": "#61DAFB"
                     },
                     {
-                        "title": "🐈 catmash"
+                        "title": "🐈 catmash",
                         "description": "Une application semblabe à Facemash mais pour des chats",
                         "source": "https://github.com/remiboissise/cat-mash",
                         "path": "https://catmash.remiboissise.com/",
