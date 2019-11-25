@@ -57,6 +57,14 @@ const projets = [
                         "path": "https://serpentron.remiboissise.com",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
+                    },
+                    {
+                        "title": "🐈 catmash"
+                        "description": "A facemash-like app with cute cats",
+                        "source": "https://github.com/remiboissise/cat-mash",
+                        "path": "https://catmash.remiboissise.com/",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
                     }
                 ]
             },
@@ -147,6 +155,14 @@ const projets = [
                         "description": "Création du jeu serpentron. Le but du jeu est de survivre le plus longtemps possible sans toucher l'adversaire.",
                         "source": "https://github.com/remiboissise/serpentron",
                         "path": "https://serpentron.remiboissise.com",
+                        "img": "/logos/react.svg",
+                        "color": "#61DAFB"
+                    },
+                    {
+                        "title": "🐈 catmash"
+                        "description": "Une application semblabe à Facemash mais pour des chats",
+                        "source": "https://github.com/remiboissise/cat-mash",
+                        "path": "https://catmash.remiboissise.com/",
                         "img": "/logos/react.svg",
                         "color": "#61DAFB"
                     }
