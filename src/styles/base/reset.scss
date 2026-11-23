@@ -1,24 +1,91 @@
-/* Reset
-  =============== */
-
-// Reset box sizing to border box
-html {
-    box-sizing: border-box;
+:root {
+    --paper: #ffffff;
+    --ink: #000000;
+    --muted: #55534d;
+    --line: #c9c7c1;
+    color-scheme: light;
 }
-  
+
+:root:has(body.dark) {
+    @include dark-tokens;
+}
+
+body.dark {
+    @include dark-tokens;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-// Remove figure margin
-figure,
+html {
+    background: var(--paper);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 106.25%;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    letter-spacing: 0.02em;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+p,
+figure {
     margin: 0;
 }
 
-p, h1, h2 {
-    letter-spacing: 1.2px;
-    line-height: 1.2em;
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }

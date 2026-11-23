@@ -1,58 +1,65 @@
-import React from 'react'
-import { Link, withPrefix } from 'gatsby';
-import ThemeContext from '../context/ThemeContext';
-import Icon from './Icon';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import config from '../../data/config';
-import { FormattedMessage } from 'react-intl';
+import React, { useContext } from "react"
+import { Link } from "gatsby"
+import { FormattedMessage, useIntl } from "react-intl"
+import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi"
+import config from "../../data/config"
+import ThemeContext from "../context/ThemeContext"
+import { localizePath } from "../i18n"
 
-export default class Navigation extends React.Component {
+const Navigation = ({ locale, scrolled, open, onToggleMenu }) => {
+  const intl = useIntl()
+  const { dark, toggleDark } = useContext(ThemeContext)
 
-    render() {
-
-        const { menuLinks, open, scrolled } = this.props;
-        const configuration = config;
-
-        return (
-            <ThemeContext.Consumer>
-                {theme => (
-                    <nav id='nav-height' className={scrolled ? 'nav scroll' : 'nav'} role="navigation">
-                        <div className={open ? 'nav-container open' : 'nav-container'}>
-                            <div className='nav-brand'>
-                                <Link to='/'>
-                                    <span className="animate">
-                                        <FormattedMessage id='Navigation.Brand' />
-                                    </span>
-                                </Link>
-                                <div className='nav-ham'>
-                                    <button className='button-ham' onClick={this.props.handleClick}>
-                                        { open ? <FaTimes /> : <FaBars /> }
-                                    </button>
-                                </div>
-                            </div>
-                            <div className='nav-links' id="nav-links-height">
-                                {
-                                    menuLinks.map(link => (
-                                        <Link key={link.name} to={link.link} activeClassName="active" partiallyActive={true} className='animate'>
-                                            <FormattedMessage id={link.name} />
-                                        </Link>
-                                    ))
-                                }
-                                <a target="_blank" rel="noopener noreferrer" href={configuration.gitUrl}>
-                                    <FormattedMessage id='Navigation.Github' />
-                                </a>
-                                <button className="button-theme" onClick={theme.toggleDark}>
-                                    { theme.dark 
-                                        ? <Icon src={withPrefix('/header/sun.svg')} height='25' alt={`Light mode`}></Icon> 
-                                        : <Icon src={withPrefix('/header/moon.svg')} height='25' alt={`Dark mode`}></Icon> 
-                                    }
-                                </button>
-                            </div>
-                        </div>
-                    </nav>
-                )}
-            </ThemeContext.Consumer>
-        )
-    }
+  return (
+    <nav
+      className={scrolled ? "nav scroll" : "nav"}
+      aria-label={intl.formatMessage({ id: "Navigation.Label" })}
+    >
+      <div className={open ? "nav-container open" : "nav-container"}>
+        <div className="nav-brand">
+          <Link to={localizePath(locale, "/")}>
+            <FormattedMessage id="Navigation.Brand" />
+          </Link>
+          <button
+            type="button"
+            className="icon-button nav-ham"
+            onClick={onToggleMenu}
+            aria-expanded={open}
+            aria-controls="nav-links"
+            aria-label={intl.formatMessage({
+              id: open ? "Navigation.CloseMenu" : "Navigation.OpenMenu",
+            })}
+          >
+            {open ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+          </button>
+        </div>
+        <div className="nav-links" id="nav-links">
+          {config.menuLinks.map((link) => (
+            <Link
+              key={link.id}
+              to={localizePath(locale, link.path)}
+              activeClassName="active"
+              partiallyActive
+            >
+              <FormattedMessage id={link.id} />
+            </Link>
+          ))}
+          <a href={config.gitUrl} target="_blank" rel="noopener noreferrer">
+            <FormattedMessage id="Navigation.Github" />
+          </a>
+          <button
+            type="button"
+            className="icon-button"
+            onClick={toggleDark}
+            aria-pressed={dark}
+            aria-label={intl.formatMessage({ id: "Navigation.DarkMode" })}
+          >
+            {dark ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+          </button>
+        </div>
+      </div>
+    </nav>
+  )
 }
 
+export default Navigation

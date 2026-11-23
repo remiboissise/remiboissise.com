@@ -1,59 +1,145 @@
+@keyframes highlight-sweep {
+    from {
+        background-size: 0% 100%;
+        color: var(--ink);
+    }
+}
+
 .page-index {
-    .inner-container 
-    {
-        &.hero 
-        {
-            padding: 2em 0em;
-            h1 
-            {
-                font-size: 2em;
-                line-height: 1.5em;
-    
-                span {
-                    &.highlight {
-                        background-color: $black-dark;
-                        color:$white-bold;
-                    }
-                }
-            }
+    .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: clamp(2rem, 6vw, 4.5rem);
+
+        h1 {
+            font-size: $display-size;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
         }
-    
-        .column-2 {
-            &.about{
-                column-count: 2;
-                column-gap: 2em;
-                text-align: justify;
-                line-height: 1.5em;
-                padding-bottom: 2em;
-                @media only screen and (max-width: $x-small) {
-                    column-count: 1;
-                    column-gap: 0em;
-                }
-            }
+    }
+
+    .highlight {
+        padding: 0 0.2em;
+        background: linear-gradient(var(--ink), var(--ink)) no-repeat 0 0 / 100% 100%;
+        color: var(--paper);
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        animation: highlight-sweep 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s backwards;
+
+        & ~ .highlight {
+            animation-delay: 0.55s;
         }
-    
-        .paragraph {
-            line-height: 1.5em;
-            text-align: justify;
-            padding-bottom: 2em;
+    }
+
+    .lead {
+        max-width: $measure;
+        margin-top: 1.75rem;
+        font-size: 1.2rem;
+    }
+
+    .portrait {
+        width: clamp(9rem, 22vw, 15rem);
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+        outline: 1px solid var(--line);
+        outline-offset: 0.6rem;
+    }
+
+    .career {
+        margin-top: clamp(3.5rem, 9vw, 6rem);
+
+        h2 {
+            margin-bottom: 1.75rem;
+            font-size: $heading-size;
         }
-    
-        a {
-           &.highlight {
-                background-color: $black-dark;
-                color:$white-bold !important;
-                cursor: pointer;
+    }
+
+    .timeline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: grid;
+            grid-template-columns: 9.5rem minmax(0, 1fr);
+            column-gap: 1.75rem;
+        }
+
+        li:last-child .entry {
+            padding-bottom: 0;
+        }
+    }
+
+    .period {
+        padding-top: 0.15rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .entry {
+        position: relative;
+        max-width: 38rem;
+        padding: 0 0 2rem 1.75rem;
+        border-left: 1px solid var(--line);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            left: -5px;
+            width: 9px;
+            height: 9px;
+            background: var(--ink);
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .summary {
+            margin-top: 0.35rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+    }
+
+    .closing {
+        max-width: $measure;
+        margin-top: clamp(3.5rem, 9vw, 6rem);
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+
+    .block-link {
+        padding: 0.1em 0.25em;
+        @include block-link;
+    }
+}
+
+@media (max-width: $x-small) {
+    .page-index {
+        .hero {
+            grid-template-columns: 1fr;
+
+            .portrait {
+                order: -1;
+                width: 8.5rem;
+                outline-offset: 0.4rem;
             }
         }
 
-        .image {
-            text-align: center;
-            .profil-pic {
-                width: 30%;
-                @media screen and (max-width: $x-small) {
-                    width: 50%
-                }
-            }
+        .timeline li {
+            grid-template-columns: 1fr;
+        }
+
+        .period {
+            padding: 0 0 0.35rem 1.75rem;
+            border-left: 1px solid var(--line);
         }
     }
 }

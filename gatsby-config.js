@@ -1,73 +1,51 @@
-const config = require('./data/config');
+const config = require("./data/config")
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "font-src 'self' data:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ")
 
 module.exports = {
-    siteMetadata: {
-        siteUrl: config.siteUrl,
-        title: config.siteTitle,
-        description: config.siteDescription,
-        author: `@remiboissise`,
-        menuLinks: [
-            {
-                name: 'Navigation.Projects',
-                link: '/projects'
-            },
-            {
-                name: 'Navigation.Contact',
-                link: '/contact'
-            }
-        ]
+  siteMetadata: {
+    siteUrl: config.siteUrl,
+  },
+  headers: [
+    {
+      source: "/*",
+      headers: [
+        { key: "content-security-policy", value: contentSecurityPolicy },
+        {
+          key: "permissions-policy",
+          value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        },
+        { key: "referrer-policy", value: "strict-origin-when-cross-origin" },
+        {
+          key: "strict-transport-security",
+          value: "max-age=31536000; includeSubDomains",
+        },
+        { key: "x-content-type-options", value: "nosniff" },
+        { key: "x-frame-options", value: "DENY" },
+        { key: "x-xss-protection", value: "0" },
+      ],
     },
-    plugins: [
-        `gatsby-plugin-sitemap`,
-        `gatsby-transformer-remark`,
-        `gatsby-plugin-remove-trailing-slashes`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
-        `gatsby-transformer-json`,
-        `gatsby-plugin-react-helmet`,
-        {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-            name: `assets`,
-            path: `${__dirname}/static`,
+  ],
+  plugins: [
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        sassOptions: {
+          silenceDeprecations: ["legacy-js-api", "import"],
         },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `data`,
-                path: `${__dirname}/data`,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-            trackingId: config.googleAnalyticsTrackingId,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-netlify`,
-            options: {
-                headers: {
-                    '/*.js': ['cache-control: public, max-age=31536000, immutable'],
-                    '/*.css': ['cache-control: public, max-age=31536000, immutable'],
-                    '/sw.js': ['cache-control: public, max-age=0, must-revalidate'],
-                },
-            },
-        },
-        `gatsby-plugin-sass`,
-        {
-        resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: config.siteTitle,
-                short_name: config.siteTitleShort,
-                description: config.siteDescription,
-                start_url: config.pathPrefix,
-                background_color: config.backgroundColor,
-                theme_color: config.themeColor,
-                display: `minimal-ui`,
-                icon: config.faviconUrl
-            },
-        },
-    ]
+      },
+    },
+    "gatsby-plugin-sitemap",
+  ],
 }

@@ -1,31 +1,49 @@
-import React from 'react'
-import FlagIcon from '../components/FlagIcon'
-import LanguageContext from '../context/LanguageContext'
-import { FormattedMessage } from 'react-intl'
+import React from "react"
+import { Link } from "gatsby"
+import { FormattedMessage, useIntl } from "react-intl"
+import {
+  LOCALE_STORAGE_KEY,
+  languageNames,
+  locales,
+  localizePath,
+} from "../i18n"
+import { writeStorage } from "../utils/storage"
 
-export default class Footer extends React.Component {
-    render() {
-        return (
-            <LanguageContext.Consumer>
-                {
-                    langue => (
-                        <footer className='foo'>
-                            <FormattedMessage id="Footer.Copyright" values={{ date : new Date().getFullYear()}} />
-                            <section className='language'>
-                            {
-                                langue.i18nAvailable.map(language => (
-                                    <button key={language.locale} onClick={langue.onChangeLanguage.bind(this, language.locale)}> 
-                                        <FlagIcon code={language.code} size='lg' />
-                                    </button>
-                                ))
-                            }
-                            </section>
-                        </footer>
-                    )
-                }
-            </LanguageContext.Consumer>
-        )
-    }
+const Footer = ({ locale, originalPath }) => {
+  const intl = useIntl()
+
+  return (
+    <footer className="foo">
+      <p>
+        <FormattedMessage
+          id="Footer.Copyright"
+          values={{
+            date: (
+              <span suppressHydrationWarning>{new Date().getFullYear()}</span>
+            ),
+          }}
+        />
+      </p>
+      <nav
+        className="language"
+        aria-label={intl.formatMessage({ id: "Footer.Language" })}
+      >
+        {locales.map((code) => (
+          <Link
+            key={code}
+            to={localizePath(code, originalPath)}
+            lang={code}
+            hrefLang={code}
+            className={code === locale ? "active" : undefined}
+            aria-current={code === locale ? "true" : undefined}
+            onClick={() => writeStorage(LOCALE_STORAGE_KEY, code)}
+          >
+            {languageNames[code]}
+          </Link>
+        ))}
+      </nav>
+    </footer>
+  )
 }
 
-Footer.contextType = LanguageContext
+export default Footer

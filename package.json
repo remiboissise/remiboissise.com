@@ -1,37 +1,37 @@
 {
   "name": "remiboissise.com",
   "private": true,
-  "description": "Personnal site develope using GatsbyJS Framework, running on React.",
-  "version": "1.2.0",
+  "description": "Personal website built with Gatsby and React.",
+  "version": "2.0.0",
   "author": "Rémi Boissise <remiboissise@gmail.com>",
+  "engines": {
+    "node": ">=20.19.0 <26"
+  },
   "dependencies": {
-    "flat": "^4.1.0",
-    "gatsby": "^2.4.2",
-    "gatsby-image": "^2.0.41",
-    "gatsby-plugin-google-analytics": "^2.0.20",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-netlify": "^2.0.17",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.36",
-    "gatsby-plugin-sitemap": "^2.1.0",
-    "gatsby-source-filesystem": "^2.0.33",
-    "gatsby-transformer-json": "^2.1.11",
-    "gatsby-transformer-remark": "^2.3.12",
-    "gatsby-transformer-sharp": "^2.1.19",
-    "node-sass": "^4.12.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-flag-icon-css": "^1.0.25",
-    "react-helmet": "^5.2.1",
-    "react-icons": "^3.7.0",
-    "react-intl": "^2.9.0",
-    "react-svg": "^9.0.4"
+    "@fontsource/raleway": "^5.3.0",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-sass": "^6.16.0",
+    "gatsby-plugin-sitemap": "^6.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.7.0",
+    "react-intl": "^12.2.1",
+    "sass": "^1.108.2"
   },
   "devDependencies": {
-    "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
-    "prettier": "^1.17.0"
+    "prettier": "^3.10.1"
+  },
+  "overrides": {
+    "cookie@0.5.0": "0.7.2",
+    "external-editor": {
+      "tmp": "0.2.7"
+    },
+    "immutable@3.7.6": "3.8.4",
+    "lodash": "^4.18.1",
+    "path-to-regexp@0.1.12": "0.1.13",
+    "serialize-javascript": "^7.1.4",
+    "sharp": "^0.35.5",
+    "webpack": "^5.113.0"
   },
   "keywords": [
     "gatsby"
@@ -39,11 +39,13 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "check": "node scripts/check-build.mjs",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "format": "prettier --write \"*.js\" \"data/**/*.js\" \"scripts/**/*.mjs\" \"src/**/*.{js,json}\"",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "npm run develop",
+    "test": "npm run build && npm run check"
   },
   "repository": {
     "type": "git",

@@ -1,21 +1,33 @@
 .foo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     width: 100%;
-    text-align: center !important;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    letter-spacing: 1px;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 1.75rem $gutter 2rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
 
     .language {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        gap: 1.25rem;
 
-        button {
-            background-color: transparent;
-            border-style: none;
-            outline: none;
-            padding: 20px 5px 0px;
-            cursor: pointer;
+        a {
+            text-underline-offset: 4px;
+
+            &:hover,
+            &.active {
+                color: var(--ink);
+                text-decoration: underline;
+            }
+
+            &.active {
+                font-weight: 600;
+            }
         }
     }
 }

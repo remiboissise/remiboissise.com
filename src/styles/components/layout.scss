@@ -1,51 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-html {
+.main-content {
+    flex: 1;
+}
 
-    font-family: 'Raleway', sans-serif;
-
-    .main {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-
-        .main-content {
-            flex-grow: 1;
-            padding: 100px 0 0;
-            min-height: calc(100vh - 162px);
-
-            @media screen and (max-width: $x-small) {
-                padding: 100px 0 0;
-            }
-        
-            a {
-                text-decoration: none;
-                color: $black-dark;
-            }
-
-            .container {
-                max-width: $width;
-                padding: 0 1.5rem;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 40px 24px;
-
-                .hidden {
-                    visibility: hidden;
-                    height: 0;
-                    margin: 0;
-                }
-            }
-        }
-
-        @media (min-width: 900px) {
-            a {
-                &.animate::after {
-                    background-color: #000;
-                    width: 0;
-                    transition: width .2s ease-in-out,background-color .2s linear;
-                }
-            }
-        }
-    }
+.container {
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) $gutter;
 }

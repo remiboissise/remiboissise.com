@@ -1,121 +1,41 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import "@fontsource/raleway/latin-300.css"
+import "@fontsource/raleway/latin-600.css"
+import "../styles/main.scss"
 import Footer from "./Footer"
 import Navigation from "./Navigation"
-import Helmet from 'react-helmet'
-import ThemeContext from '../context/ThemeContext'
-import LanguageContext from '../context/LanguageContext'
-import { IntlProvider } from 'react-intl'
-import '../styles/main.scss'
 
-class Layout extends React.Component {
+const SCROLL_THRESHOLD = 20
 
-    constructor(props)
-    {
-        super(props)
-        this.state = {
-            scrolled: false,
-            open: false
-        }
-    }
+const Layout = ({ children, locale, originalPath }) => {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
-    navOnScroll = () => {
-        (window.scrollY > 20) ? this.setState({ scrolled : true }) : this.setState({ scrolled : false });
-    }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.navOnScroll);
-    }
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [locale, originalPath])
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.navOnScroll);
-    }
-
-    getHeight(id) {
-        return document.getElementById(id).clientHeight;
-    }
-
-    handleClick(e) {
-        e.preventDefault();
-        const isOpen = this.state.open;
-        (isOpen) ? 
-            this.setState({ open : false}, () => {
-                let height = this.getHeight('nav-height');
-                document.getElementById('main-content-height').style.padding = height + 'px 0 0'; 
-            }) : 
-            this.setState({ open : true}, () => {
-                let height = this.getHeight('nav-height');
-                document.getElementById('main-content-height').style.padding = height + 'px 0 0'; 
-            });
-    }
-
-    render()
-    {
-        const { children } = this.props;
-        return(
-            <StaticQuery
-            query={graphql`
-                query SiteTitleQuery {
-                    site {
-                        siteMetadata {
-                            title
-                            description
-                            menuLinks{
-                                name
-                                link
-                            }
-                        }
-                    }
-                }
-            `}
-            render={data => (
-                <ThemeContext.Consumer>
-                    {theme => (
-                        <>
-                            <Helmet 
-                                bodyAttributes={{
-                                    class: theme.dark ? 'dark' : ''
-                                }}
-                            >
-                                <meta name="description" content={data.site.siteMetadata.description} />
-                            </Helmet>
-                            <LanguageContext.Consumer> 
-                                { 
-                                    langue => (
-                                        <IntlProvider 
-                                            key={langue.locale}
-                                            locale={langue.locale}
-                                            messages={langue.messages}
-                                        >
-                                            <div className='main'>  
-                                                <Navigation 
-                                                    menuLinks={data.site.siteMetadata.menuLinks} 
-                                                    scrolled={this.state.scrolled} 
-                                                    open={this.state.open}
-                                                    handleClick={this.handleClick.bind(this)}
-                                                />  
-                                                <main className="main-content" id="main-content-height">
-                                                    {children}
-                                                </main>
-                                                <Footer />
-                                            </div>  
-                                        </IntlProvider>
-                                    )
-                                }
-                            </LanguageContext.Consumer>
-                        </>
-                    )} 
-                </ThemeContext.Consumer>
-            )}
-        />
-    )}
-}
-
-Layout.contextType = LanguageContext
-
-Layout.propTypes = {
-    children: PropTypes.node.isRequired
+  return (
+    <div className="main">
+      <Navigation
+        locale={locale}
+        scrolled={scrolled}
+        open={menuOpen}
+        onToggleMenu={() => setMenuOpen((open) => !open)}
+      />
+      <main className="main-content" id="main-content">
+        {children}
+      </main>
+      <Footer locale={locale} originalPath={originalPath} />
+    </div>
+  )
 }
 
 export default Layout

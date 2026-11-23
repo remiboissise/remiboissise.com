@@ -1,17 +1,37 @@
-/* Containers */
 $x-small: 720px;
-$small: 800px;
-$medium: 1200px;
-$large: 1300px;
+$content-width: 62rem;
+$measure: 40rem;
+$gutter: clamp(1rem, 4vw, 2rem);
+$display-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.2rem);
+$heading-size: clamp(1.5rem, 1.25rem + 1vw, 1.95rem);
 
-/* Breakpoints */
-$width: 800px;
+@mixin dark-tokens {
+    --paper: #000000;
+    --ink: #ffffff;
+    --muted: #a8a6a0;
+    --line: #3a3936;
+    color-scheme: dark;
+}
 
-/* Colors */
-$white-light: rgba(255, 255, 255, 0.6);
-$white: rgba(255, 255, 255, 0.9);
-$white-bold: rgba(255, 255, 255, 1);
-$black: rgba(49, 48, 43, 1);
-$black-light: rgba(49, 48, 43, 0.6);
-$black-dark: rgba(0, 0, 0, 0.9);
-$black-bold:rgba(0, 0, 0, 1);
+@mixin fill-link {
+    background: linear-gradient(var(--ink), var(--ink)) no-repeat 0 0 / 0% 100%;
+    transition: background-size 0.4s ease-out, color 0.4s ease-out;
+
+    &:hover,
+    &:focus-visible {
+        background-size: 100% 100%;
+        color: var(--paper);
+    }
+}
+
+@mixin block-link {
+    background: linear-gradient(var(--ink), var(--ink)) no-repeat 100% 0 / 100% 100%;
+    color: var(--paper);
+    transition: background-size 0.4s ease-out, color 0.4s ease-out;
+
+    &:hover,
+    &:focus-visible {
+        background-size: 0% 100%;
+        color: var(--ink);
+    }
+}

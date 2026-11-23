@@ -1,43 +1,46 @@
 {
-    "Index" : 
-    {
-        "Presentation"              : "<h1>salut, c'est <span class='highlight'>rémi</span>. Je suis un <span class = 'highlight'>développeur full-stack</span> résidant à Paris, en France.</h1>",
-        "About"                     : "Passionné, dynamique et diplômé d’un Master en méthodes informatiques appliquées à la gestion des entreprises à l’université Paris 1 – Panthéon-Sorbonne, je m’intéresse depuis de nombreuses années aux nouvelles technologies. J’aime en particulier l'idée que les applications que je conçois facilitent le quotidien des utilisateurs. C’est dans cette perspective que j’ai mis au point, pour D-Dale, une solution d’orientation dans les bâtiments complexes totalement indépendant de tout matériel physique ou connexion internet.",
-        "Situation"                 : "Le développement d’algorithmes reste pour moi l’un des enjeux fondamentaux de la programmation. J’aime apprendre de nouvelles choses et les faire découvrir à mon entourage. N'hésitez pas à découvrir <a class='highlight' href='/projects'>mes différents projets</a>, consulter <a class='highlight' href={cv_url}>mon cv</a> ou à <a class='highlight' href='/contact'>me contacter</a> directement si vous souhaitez en apprendre davantage sur mon travail."
-    },
-    "Navigation" : 
-    {
-        "Brand"                     : "rémi boissise",
-        "Projects"                  : "projets",
-        "Contact"                   : "contact",
-        "Github"                    : "github" 
-    },
-    "Contact": 
-    {
-        "Title"                     : "restons en contact",
-        "Email"                     : "email",
-        "Linkedin"                  : "linkedin",
-        "Github"                    : "github",
-        "Resume"                    : "cv"
-    },
-    "Footer":
-    {
-        "Copyright"                 : "© {date}, rémi boissise"
-    },
-    "Project": 
-    {
-        "Title"                     : "my projects",
-        "Website"                   : "site",
-        "Source"                    : "source"
-    },
-    "404": 
-    {
-        "First_number"              : "4",
-        "Second_number"             : "0",
-        "Third_number"              : "4",
-        "First_word"                : "page",
-        "Second_word_1"             : "n",
-        "Second_word_2"             : "n",
-        "Third_word"                : "trouvée"
-    }
+  "Index.Title": "lead developer full-stack",
+  "Index.Description": "Rémi Boissise, lead developer full-stack à Paris : applications web et mobiles avec .NET, Angular, React et Azure.",
+  "Index.Presentation": "salut, c’est <hl>rémi</hl>. Je suis <hl>lead developer full-stack</hl> et je vis à Paris.",
+  "Index.About": "Je conçois depuis 10 ans des applications web et mobiles de bout en bout, de l’algorithmique au cloud Azure. Je suis aujourd’hui lead developer chez Sharp Vision, une RegTech au service des régulateurs des jeux d’argent en ligne, où j’ai créé plusieurs produits et où je pilote les choix techniques de l’équipe.",
+  "Index.Career": "parcours",
+  "Index.Situation": "Ce qui me motive : des logiciels qui facilitent vraiment le quotidien de leurs utilisateurs. Découvrez <projects>mes projets</projects>, consultez <resume>mon cv</resume> ou <contact>contactez-moi</contact>.",
+
+  "Navigation.Label": "Navigation principale",
+  "Navigation.Brand": "rémi boissise",
+  "Navigation.Projects": "projets",
+  "Navigation.Contact": "contact",
+  "Navigation.Github": "github",
+  "Navigation.OpenMenu": "Ouvrir le menu",
+  "Navigation.CloseMenu": "Fermer le menu",
+  "Navigation.DarkMode": "Mode sombre",
+
+  "Contact.SeoTitle": "contact",
+  "Contact.Description": "E-mail, LinkedIn, GitHub et CV de Rémi Boissise, lead developer full-stack à Paris.",
+  "Contact.Title": "restons en contact",
+  "Contact.Email": "email",
+  "Contact.Linkedin": "linkedin",
+  "Contact.Github": "github",
+  "Contact.Resume": "cv",
+
+  "Footer.Copyright": "© {date}, rémi boissise",
+  "Footer.Language": "Langue",
+
+  "Project.SeoTitle": "projets",
+  "Project.Description": "Projets open source et réalisations de Rémi Boissise : modules npm, jeux en React, applications mobiles et orientation en intérieur.",
+  "Project.Title": "mes projets",
+  "Project.Website": "site",
+  "Project.Source": "source",
+  "Project.AppStore": "Télécharger dans l’App Store",
+  "Project.PlayStore": "Disponible sur Google Play",
+
+  "404.SeoTitle": "404",
+  "404.Description": "Page introuvable.",
+  "404.First_number": "4",
+  "404.Second_number": "0",
+  "404.Third_number": "4",
+  "404.First_word": "page",
+  "404.Second_word_1": "n",
+  "404.Second_word_2": "n",
+  "404.Third_word": "trouvée"
 }

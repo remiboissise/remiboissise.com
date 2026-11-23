@@ -1,51 +1,44 @@
-import React from 'react'
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
+import { readStorage, writeStorage } from "../utils/storage"
 
-const defaultState = {
-    dark : false,
-    toggleDark : () => {}
-}
+export const THEME_STORAGE_KEY = "dark"
 
-const ThemeContext = React.createContext(defaultState);
-const supportsDarkMode = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches === true
+const ThemeContext = createContext({ dark: false, toggleDark: () => {} })
 
-class ThemeProvider extends React.Component {
-  state = {
-    dark: false,
-  }
+export const ThemeProvider = ({ children }) => {
+  const [dark, setDark] = useState(null)
 
-  toggleDark = () => {
-    let dark = !this.state.dark
-    localStorage.setItem("dark", JSON.stringify(dark))
-    this.setState({ dark })
-  }
-
-  componentDidMount() {
-    const lsDark = JSON.parse(localStorage.getItem("dark"))
-    if (lsDark) {
-      this.setState({ dark: lsDark })
-    } else if (supportsDarkMode()) {
-      this.setState({ dark: true })
-    }
-  }
-
-  render() {
-    const { children } = this.props
-    const { dark } = this.state
-    return (
-      <ThemeContext.Provider
-        value={{
-          dark,
-          toggleDark: this.toggleDark,
-        }}
-      >
-        {children}
-      </ThemeContext.Provider>
+  useEffect(() => {
+    const stored = readStorage(THEME_STORAGE_KEY)
+    setDark(
+      typeof stored === "boolean"
+        ? stored
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
     )
-  }
+  }, [])
+
+  useEffect(() => {
+    if (dark !== null) document.body.classList.toggle("dark", dark)
+  }, [dark])
+
+  const toggleDark = useCallback(() => {
+    const next = dark !== true
+    writeStorage(THEME_STORAGE_KEY, next)
+    setDark(next)
+  }, [dark])
+
+  const value = useMemo(
+    () => ({ dark: dark === true, toggleDark }),
+    [dark, toggleDark]
+  )
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeContext
-
-export { ThemeProvider }
-
