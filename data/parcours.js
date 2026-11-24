@@ -5,8 +5,8 @@ const parcours = [
     organization: "Sharp Vision",
     role: "lead developer",
     summary: {
-      en: "RegTech for online gambling regulators: illegal gambling site detection, generative AI, payment gateway, and technical leadership of the team.",
-      fr: "RegTech au service des régulateurs des jeux d’argent en ligne : détection des sites illégaux, IA générative, passerelle de paiement et pilotage technique de l’équipe.",
+      en: "RegTech for online gambling regulators on three continents: secure payments, data protection, illegal gambling site detection and generative AI. Managing a team of 3 developers.",
+      fr: "RegTech au service des régulateurs des jeux d’argent en ligne sur trois continents : sécurisation des paiements, protection des données, détection des sites illégaux et IA générative. Encadrement d’une équipe de 3 développeurs.",
     },
   },
   {
